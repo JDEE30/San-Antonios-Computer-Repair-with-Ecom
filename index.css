@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+
+#1 {
+width: 100%;
+height: 100%;
+background-color: rgb(89, 63, 177);
+    }
+#center {
+    text-align: center;
+    clear: both;
+   }
+
+   #Left-text {
+text-align: left;
+transform: translate(1%,100%);
+  clear: both;
+
+   }
+#Left-text h1 { 
+    font-size: 4em;
+    color: #8FADE9;  
+     clear: both;
+}
+
+#Left-text p{ 
+    font-size: 2em;
+    color: #FF2424;
+    clear: both;
+} 
+#Left-text h1,p 
+{
+    text-align: justify;
+    clear: both;
+}
+
+#right-image  {
+   
+    transform: translate(10%,-30%);
+    clear: both;
+   
+}
+
+#2 {
+
+    clear: both;
+    background-color: chocolate; 
+}
