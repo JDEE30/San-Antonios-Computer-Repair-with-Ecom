@@ -196,7 +196,129 @@
                                 <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span> WIFI:IEEE 802.11 b/g/n WIFI and 10-100M Ethernet Access</li>
                                  </ul>
 
+                           
+                            <div class="mt-4 pt-2">
+                                <div id="smart-button-container">
+                                    <div style="text-align: center;">
+                                      <div id="paypal-button-container"></div>
+                                    </div>
+                                  </div>
+                                <script src="https://www.paypal.com/sdk/js?client-id=AcAQ_Y8nxI9xPIn5y_cKxCOiyDAHN9Zsgdr3D69-P2kvOmk81gIic210wTH747WfY7GtAgFiG5R7uhcO&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+                                <script>
+                                  function initPayPalButton() {
+                                    paypal.Buttons({
+                                      style: {
+                                        shape: 'rect',
+                                        color: 'blue',
+                                        layout: 'horizontal',
+                                        label: 'buynow',
+                                        
+                                      },
+                              
+                                      createOrder: function(data, actions) {
+                                        return actions.order.create({
+                                          purchase_units: [{"description":"2021 cheap laptop 14 inch super thin RAM 6GB windows 10","amount":{"currency_code":"USD","value":259.18,"breakdown":{"item_total":{"currency_code":"USD","value":249.99},"shipping":{"currency_code":"USD","value":8.99},"tax_total":{"currency_code":"USD","value":0.2}}}}]
+                                        });
+                                      },
+                              
+                                      onApprove: function(data, actions) {
+                                        return actions.order.capture().then(function(orderData) {
+                                          
+                                          // Full available details
+                                          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                              
+                                          // Show a success message within this page, e.g.
+                                          const element = document.getElementById('paypal-button-container');
+                                          element.innerHTML = '';
+                                          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                              
+                                          // Or go to another URL:  actions.redirect('thank_you.html');
+                                          
+                                        });
+                                      },
+                              
+                                      onError: function(err) {
+                                        console.log(err);
+                                      }
+                                    }).render('#paypal-button-container');
+                                  }
+                                  initPayPalButton();
+                                </script> 
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="container mt-100 mt-60">
+                <div class="row">
+                    
+                    <div class="col-12">
+                        <ul class="nav nav-pills shadow flex-column flex-sm-row d-md-inline-flex mb-0 p-1 bg-white rounded position-relative overflow-hidden" id="pills-tab" role="tablist">
+                            <li class="nav-item m-1">
+                                <a class="nav-link py-2 px-5 active rounded" id="description-data" data-bs-toggle="pill" href="#description" role="tab" aria-controls="description" aria-selected="false">
+                                    <div class="text-center">
+                                        
+                                        <h2 class="mb-0">Description</h2>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
                             
+                            <li class="nav-item m-1">
+                                <a class="nav-link py-2 px-5 rounded" id="additional-info" data-bs-toggle="pill" href="#additional" role="tab" aria-controls="additional" aria-selected="false">
+                                    <div class="text-center">
+                                        <h2 class="mb-0">Additional Information</h2>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+
+                          
+                        <div class="tab-content mt-5" id="pills-tabContent">
+                            <div class="card border-0 tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-data">
+                                <p class="text-muted mb-0">
+                                    <ul>
+
+                                        <li> Ultra-high capacity SATA SSD,Breakthrough high-performing storage density
+                                           </li>
+                                        <li>High quality Years of SSD production experience, strictly tested one-by-one
+                                        </li>
+                                        <li> High-speed storage for photos,videos and files
+                                        </li>
+                                        <li>Boost your data transfer speeds With the SSD</li>
+                                        <li>Support Type-C interface device connection and connect computer large file reads file reads faster</p>
+                                        </li>
+                                        <a href="https://www.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&sessionID=uid_6e00acbf8c_mdi6mdi6mdy&buttonSessionID=uid_c0e7c735ff_mdi6mdq6ntm&stickinessID=uid_509de9f657_mde6mjy6ndq&fundingSource=paypal&buyerCountry=US&locale.x=en_US&commit=true&enableFunding.0=venmo&clientID=AcAQ_Y8nxI9xPIn5y_cKxCOiyDAHN9Zsgdr3D69-P2kvOmk81gIic210wTH747WfY7GtAgFiG5R7uhcO&env=production&sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWwuY29tL3Nkay9qcz9jbGllbnQtaWQ9QWNBUV9ZOG54STl4UEluNXlfY0t4Q09peURBSE45WnNnZHIzRDY5LVAya3ZPbWs4MWdJaWMyMTB3VEg3NDdXZlk3R3RBZ0ZpRzVSN3VoY08mZW5hYmxlLWZ1bmRpbmc9dmVubW8mY3VycmVuY3k9VVNEIiwiYXR0cnMiOnsiZGF0YS1zZGstaW50ZWdyYXRpb24tc291cmNlIjoiYnV0dG9uLWZhY3RvcnkiLCJkYXRhLXVpZCI6InVpZF96aHV1bGxtaWxmaXVtY3djamhsZHpyb215bW91eHIifX0&xcomponent=1&version=5.0.267&token=56X26559AF4102725&rcache=1&cookieBannerVariant=hidden&arc=1#/checkout/login" class="btn btn-danger me-2">Buy now!</a>
+
+
+                                    </ul>             </div>
+
+                            <div class="card border-0 tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-info">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 100px;">Item Condition:</td>
+                                            <td class="text-muted">
+                                                New</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Interface Rate:</td>
+                                            <td class="text-muted">
+                                                6Gb/s</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Average Seek Time:</td>
+                                            <td class="text-muted">8.9ms</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <img src="images/Great-Asia-Laptop-gaming-image.PNG" class="img-fluid" alt="Image of Great Asia laptop playing a game">
+
+                            <img src="images/Great-asia-product-image.PNG" style="margin-bottom: 5%;" class="img-fluid" alt="Image and product description of Great Asia laptop">
+
+
                             <div class="mt-4 pt-2">
                                 <div id="smart-button-container">
                                     <div style="text-align: center;">
@@ -249,74 +371,6 @@
                     </div><!--end col-->
                 </div><!--end row-->
             </div><!--end container-->
-
-            <div class="container mt-100 mt-60">
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="nav nav-pills shadow flex-column flex-sm-row d-md-inline-flex mb-0 p-1 bg-white rounded position-relative overflow-hidden" id="pills-tab" role="tablist">
-                            <li class="nav-item m-1">
-                                <a class="nav-link py-2 px-5 active rounded" id="description-data" data-bs-toggle="pill" href="#description" role="tab" aria-controls="description" aria-selected="false">
-                                    <div class="text-center">
-                                        <h2 class="mb-0">Description</h2>
-                                    </div>
-                                </a><!--end nav link-->
-                            </li><!--end nav item-->
-                            
-                            <li class="nav-item m-1">
-                                <a class="nav-link py-2 px-5 rounded" id="additional-info" data-bs-toggle="pill" href="#additional" role="tab" aria-controls="additional" aria-selected="false">
-                                    <div class="text-center">
-                                        <h2 class="mb-0">Additional Information</h2>
-                                    </div>
-                                </a><!--end nav link-->
-                            </li><!--end nav item-->
-
-                          
-                        <div class="tab-content mt-5" id="pills-tabContent">
-                            <div class="card border-0 tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-data">
-                                <p class="text-muted mb-0">
-                                    <ul>
-
-                                        <li> Ultra-high capacity SATA SSD,Breakthrough high-performing storage density
-                                           </li>
-                                        <li>High quality Years of SSD production experience, strictly tested one-by-one
-                                        </li>
-                                        <li> High-speed storage for photos,videos and files
-                                        </li>
-                                        <li>Boost your data transfer speeds With the SSD</li>
-                                        <li>Support Type-C interface device connection and connect computer large file reads file reads faster</p>
-                                        </li>
-
-
-                                    </ul>             </div>
-
-                            <div class="card border-0 tab-pane fade" id="additional" role="tabpanel" aria-labelledby="additional-info">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td style="width: 100px;">Item Condition:</td>
-                                            <td class="text-muted">
-                                                New</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Interface Rate:</td>
-                                            <td class="text-muted">
-                                                6Gb/s</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Average Seek Time:</td>
-                                            <td class="text-muted">8.9ms</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <img src="images/Great-Asia-Laptop-gaming-image.PNG" class="img-fluid" alt="Image of Great Asia laptop playing a game">
-
-                            <img src="images/Great-asia-product-image.PNG" style="margin-bottom: 5%;" class="img-fluid" alt="Image and product description of Great Asia laptop">
-
-
-
 
                             <div class="card border-0 tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-comments">
                                 <div class="row">
