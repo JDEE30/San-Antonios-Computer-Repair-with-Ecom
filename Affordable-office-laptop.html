@@ -186,56 +186,59 @@
                            
                             <div class="mt-4 pt-2">
                                 <div id="smart-button-container">
-                                    <div style="text-align: center;">
-                                      <div id="paypal-button-container"></div>
-                                    </div>
-                                  </div>
-                                <script src="https://www.paypal.com/sdk/js?client-id=AcAQ_Y8nxI9xPIn5y_cKxCOiyDAHN9Zsgdr3D69-P2kvOmk81gIic210wTH747WfY7GtAgFiG5R7uhcO&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-                                <script>
-                                  function initPayPalButton() {
-                                    paypal.Buttons({
-                                      style: {
-                                        shape: 'rect',
-                                        color: 'blue',
-                                        layout: 'horizontal',
-                                        label: 'buynow',
-                                        
-                                      },
-                              
-                                      createOrder: function(data, actions) {
-                                        return actions.order.create({
-                                          purchase_units: [{"description":"Laptop 16gb ram 128gb storage quadcore","amount":{"currency_code":"USD","value":499.99,"breakdown":{"item_total":{"currency_code":"USD","value":499.99},"shipping":{"currency_code":"USD","value":8.99},"tax_total":{"currency_code":"USD","value":0.2}}}}]
-                                        });
-                                      },
-                              
-                                      onApprove: function(data, actions) {
-                                        return actions.order.capture().then(function(orderData) {
-                                          
-                                          // Full available details
-                                          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                              
-                                          // Show a success message within this page, e.g.
-                                          const element = document.getElementById('paypal-button-container');
-                                          element.innerHTML = '';
-                                          element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                              
-                                          // Or go to another URL:  actions.redirect('thank_you.html');
-                                          
-                                        });
-                                      },
-                              
-                                      onError: function(err) {
-                                        console.log(err);
+                    
+                                    <div id="smart-button-container">
+                                        <div style="text-align: center;">
+                                          <div id="paypal-button-container"></div>
+                                        </div>
+                                      </div>
+                                    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+                                    <script>
+                                      function initPayPalButton() {
+                                        paypal.Buttons({
+                                          style: {
+                                            shape: 'rect',
+                                            color: 'blue',
+                                            layout: 'horizontal',
+                                            label: 'paypal',
+                                            
+                                          },
+                                  
+                                          createOrder: function(data, actions) {
+                                            return actions.order.create({
+                                              purchase_units: [{"description":"Vitex 4 Core 4 thread N509512GB ram 15.6 inch work laptop color:red ","amount":{"currency_code":"USD","value":499.99}}]
+                                            });
+                                          },
+                                  
+                                          onApprove: function(data, actions) {
+                                            return actions.order.capture().then(function(orderData) {
+                                              
+                                              // Full available details
+                                              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                  
+                                              // Show a success message within this page, e.g.
+                                              const element = document.getElementById('paypal-button-container');
+                                              element.innerHTML = '';
+                                              element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                  
+                                              // Or go to another URL:  actions.redirect('thank_you.html');
+                                              
+                                            });
+                                          },
+                                  
+                                          onError: function(err) {
+                                            console.log(err);
+                                          }
+                                        }).render('#paypal-button-container');
                                       }
-                                    }).render('#paypal-button-container');
-                                  }
-                                  initPayPalButton();
-                                </script> 
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
+                                      initPayPalButton();
+                                    </script>
+                                                        </div>
+                                                    </div>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end container-->
+                            
 
             <div class="container mt-100 mt-60">
                 <div class="row">
@@ -276,7 +279,6 @@
                                         <li>Video Memory Type: GDDR4</li>
                                         <li>Display Resolution: 1980x1080</li>
                                         
-                                        <a href="https://www.paypal.com/webapps/hermes?flow=1-P&ulReturn=true&sessionID=uid_6e00acbf8c_mdi6mdi6mdy&buttonSessionID=uid_c0e7c735ff_mdi6mdq6ntm&stickinessID=uid_509de9f657_mde6mjy6ndq&fundingSource=paypal&buyerCountry=US&locale.x=en_US&commit=true&enableFunding.0=venmo&clientID=AcAQ_Y8nxI9xPIn5y_cKxCOiyDAHN9Zsgdr3D69-P2kvOmk81gIic210wTH747WfY7GtAgFiG5R7uhcO&env=production&sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWwuY29tL3Nkay9qcz9jbGllbnQtaWQ9QWNBUV9ZOG54STl4UEluNXlfY0t4Q09peURBSE45WnNnZHIzRDY5LVAya3ZPbWs4MWdJaWMyMTB3VEg3NDdXZlk3R3RBZ0ZpRzVSN3VoY08mZW5hYmxlLWZ1bmRpbmc9dmVubW8mY3VycmVuY3k9VVNEIiwiYXR0cnMiOnsiZGF0YS1zZGstaW50ZWdyYXRpb24tc291cmNlIjoiYnV0dG9uLWZhY3RvcnkiLCJkYXRhLXVpZCI6InVpZF96aHV1bGxtaWxmaXVtY3djamhsZHpyb215bW91eHIifX0&xcomponent=1&version=5.0.267&token=56X26559AF4102725&rcache=1&cookieBannerVariant=hidden&arc=1#/checkout/login" class="btn btn-danger me-2">Buy Now!</a>
 
 
                                     </ul>             </div>
@@ -311,52 +313,7 @@
 
 
                             <div class="mt-4 pt-2">
-                                <div id="smart-button-container">
-                                    <div style="text-align: center;">
-                                      <div id="paypal-button-container"></div>
-                                    </div>
-                                  </div>
-                                <script src="https://www.paypal.com/sdk/js?client-id=AcAQ_Y8nxI9xPIn5y_cKxCOiyDAHN9Zsgdr3D69-P2kvOmk81gIic210wTH747WfY7GtAgFiG5R7uhcO&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-                                <script>
-                                  function initPayPalButton() {
-                                    paypal.Buttons({
-                                      style: {
-                                        shape: 'rect',
-                                        color: 'blue',
-                                        layout: 'horizontal',
-                                        label: 'buynow',
-                                        
-                                      },
-                              
-                                      createOrder: function(data, actions) {
-                                        return actions.order.create({
-                                          purchase_units: [{"description":"Laptop 16gb ram 128gb storage quadcore","amount":{"currency_code":"USD","value":499.99,"breakdown":{"item_total":{"currency_code":"USD","value":499.99},"shipping":{"currency_code":"USD","value":8.99},"tax_total":{"currency_code":"USD","value":0.2}}}}]
-                                        });
-                                      },
-                              
-                                      onApprove: function(data, actions) {
-                                        return actions.order.capture().then(function(orderData) {
-                                          
-                                          // Full available details
-                                          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                              
-                                          // Show a success message within this page, e.g.
-                                          const element = document.getElementById('paypal-button-container');
-                                          element.innerHTML = '';
-                                          element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                              
-                                          // Or go to another URL:  actions.redirect('thank_you.html');
-                                          
-                                        });
-                                      },
-                              
-                                      onError: function(err) {
-                                        console.log(err);
-                                      }
-                                    }).render('#paypal-button-container');
-                                  }
-                                  initPayPalButton();
-                                </script>
+                           
                             </div>
                         </div>
                     </div><!--end col-->

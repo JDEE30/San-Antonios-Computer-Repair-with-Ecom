@@ -168,52 +168,52 @@
                                 <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span> internal or external ssd - use this as your main ssd or external</li>
                             </ul>
                             <div id="smart-button-container">
-                               
-                                    <div style="text-align: center;">
-                                      <div id="paypal-button-container"></div>
-                                    </div>
-                                  </div>
-                                <script src="https://www.paypal.com/sdk/js?client-id=AcAQ_Y8nxI9xPIn5y_cKxCOiyDAHN9Zsgdr3D69-P2kvOmk81gIic210wTH747WfY7GtAgFiG5R7uhcO&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-                                <script>
-                                  function initPayPalButton() {
-                                    paypal.Buttons({
-                                      style: {
-                                        shape: 'rect',
-                                        color: 'blue',
-                                        layout: 'horizontal',
-                                        label: 'buynow',
-                                        
-                                      },
-                              
-                                      createOrder: function(data, actions) {
-                                        return actions.order.create({
-                                          purchase_units: [{"description":"29.99 Internal 2.5 Inch SATA3 SSD Drive for Laptop Desktop hard disk SSD","amount":{"currency_code":"USD","value":5.99,"breakdown":{"item_total":{"currency_code":"USD","value":1},"shipping":{"currency_code":"USD","value":4.99},"tax_total":{"currency_code":"USD","value":0}}}}]
-                                        });
-                                      },
-                              
-                                      onApprove: function(data, actions) {
-                                        return actions.order.capture().then(function(orderData) {
-                                          
-                                          // Full available details
-                                          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                              
-                                          // Show a success message within this page, e.g.
-                                          const element = document.getElementById('paypal-button-container');
-                                          element.innerHTML = '';
-                                          element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                              
-                                          // Or go to another URL:  actions.redirect('thank_you.html');
-                                          
-                                        });
-                                      },
-                              
-                                      onError: function(err) {
-                                        console.log(err);
-                                      }
-                                    }).render('#paypal-button-container');
-                                  }
-                                  initPayPalButton();
-                                </script>
+                    
+        <div style="text-align: center;">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        paypal.Buttons({
+          style: {
+            shape: 'pill',
+            color: 'blue',
+            layout: 'horizontal',
+            label: 'buynow',
+            
+          },
+  
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{"description":"29.99 Internal 2.5 Inch SATA3 SSD Drive for Laptop Desktop hard disk SSD","amount":{"currency_code":"USD","value":29.99}}]
+            });
+          },
+  
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(orderData) {
+              
+              // Full available details
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+  
+              // Show a success message within this page, e.g.
+              const element = document.getElementById('paypal-button-container');
+              element.innerHTML = '';
+              element.innerHTML = '<h3>Thank you for your payment!</h3>';
+  
+              // Or go to another URL:  actions.redirect('thank_you.html');
+              
+            });
+          },
+  
+          onError: function(err) {
+            console.log(err);
+          }
+        }).render('#paypal-button-container');
+      }
+      initPayPalButton();
+    </script>
                             </div>
                         </div>
                     </div><!--end col-->
